@@ -24,10 +24,10 @@ public class OrderController {
     private final Random random = new Random();
 
     public OrderController(MeterRegistry meterRegistry) {
-        this.orderCreatedCounter = Counter.builder("orders_created_total")
+        this.orderCreatedCounter = Counter.builder("orders.created")
                 .description("Total de pedidos creados correctamente")
                 .register(meterRegistry);
-        this.orderFailedCounter = Counter.builder("orders_failed_total")
+        this.orderFailedCounter = Counter.builder("orders.failed")
                 .description("Total de pedidos fallidos")
                 .register(meterRegistry);
     }
